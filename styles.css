@@ -1,0 +1,575 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    color: #364559;
+}
+
+.header-fullscreen {
+    position: relative;
+    background-image: url('img/cabecalho2.png');
+    /* Substitua com o caminho da imagem */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #F2F2F2;
+    text-align: center;
+}
+
+
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(29, 143, 242, 0);
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #5f5d5d;
+    padding: 0.5rem 1rem;
+    background-color: rgba(43, 166, 82, 0);
+    /* Fundo semi-transparente */
+    border-radius: 8px;
+    /* Borda arredondada */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    /* Sombra sutil */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Efeito de transição */
+}
+
+.logo:hover {
+    background-color: #038C4C;
+    /* Aumenta a opacidade ao passar o mouse */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    /* Sombra levemente mais intensa */
+}
+
+
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #F2F2F2;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #0f10118b;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #F2F2F2;
+}
+
+.header-content h2 {
+    font-size: 3rem;
+    /* Tamanho maior para mais impacto */
+    margin-bottom: 1rem;
+    /* Maior espaçamento inferior */
+    color: #FFFFFF;
+    text-shadow: 2px 4px 6px rgb(0, 0, 0);
+    /* Sombra suave para destaque */
+    font-weight: 700;
+    /* Negrito para enfatizar */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Transições suaves para efeitos */
+}
+
+.header-content h2:hover {
+    transform: scale(1.05);
+    /* Leve aumento ao passar o mouse */
+    color: #038C4C;
+    /* Cor dourada ao passar o mouse */
+}
+
+
+.header-content p {
+    font-size: 1.3rem;
+    /* Aumenta ligeiramente o tamanho da fonte */
+    line-height: 1.6;
+    /* Melhora a legibilidade */
+    color: #FFFFFF;
+    /* Cor branca para contraste */
+    max-width: 700px;
+    /* Limita a largura do parágrafo para uma leitura confortável */
+    text-align: center;
+    /* Centraliza o texto para um layout mais harmonioso */
+    margin-bottom: 1.5rem;
+    /* Espaçamento inferior */
+    text-shadow: 1px 2px 4px rgb(0, 0, 0);
+    /* Sombra sutil */
+    transition: color 0.3s ease;
+    /* Transição suave ao mudar de cor */
+}
+
+.header-content p:hover {
+    color: #E0E0E0;
+    /* Cor ligeiramente mais clara ao passar o mouse */
+}
+
+.schedule-button {
+    display: inline-block;
+    /* Permite que o botão tenha propriedades de bloco */
+    padding: 1rem 2rem;
+    /* Espaçamento interno */
+    font-size: 1.2rem;
+    /* Tamanho da fonte */
+    background-color: #038c4c85;
+    /* Cor de fundo */
+    color: #F2F2F2;
+    /* Cor do texto */
+    border: none;
+    /* Remove bordas padrão */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    text-decoration: none;
+    /* Remove sublinhado */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Transições suaves */
+    margin-top: 1rem;
+    /* Espaçamento acima do botão */
+}
+
+.schedule-button:hover {
+    background-color: #0f1011;
+    /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05);
+    /* Aumenta levemente o botão */
+}
+
+/* Estilos responsivos para o botão */
+@media (max-width: 768px) {
+    .schedule-button {
+        padding: 0.8rem 1.5rem;
+        /* Ajusta o espaçamento em telas menores */
+        font-size: 1rem;
+        /* Ajusta o tamanho da fonte */
+    }
+}
+
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(0, 196, 42, 0.623);
+        padding: 1rem;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-content h2 {
+        font-size: 2rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+}
+
+
+section {
+    padding: 3rem 1.5rem;
+    /* Reduz o padding para melhor ajuste em dispositivos móveis */
+    background-color: #038C4C;
+    /* Cor de fundo verde para harmonizar com o layout */
+    color: #FFFFFF;
+    /* Cor do texto para contraste com o fundo */
+    text-align: center;
+    border-radius: 8px;
+    /* Bordas arredondadas para suavizar o visual */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra suave para destacar a seção */
+    margin: 1rem auto;
+    /* Espaçamento automático para centralizar */
+    max-width: 1400px;
+    /* Largura máxima para limitar em telas maiores */
+    transition: transform 0.3s ease;
+    /* Transição suave para efeitos de interação */
+}
+
+section:hover {
+    transform: scale(1.02);
+    /* Leve ampliação ao passar o mouse */
+}
+
+section h2 {
+    font-size: 2rem;
+    /* Tamanho da fonte ajustado para ser legível em dispositivos móveis */
+    margin-bottom: 1rem;
+    font-weight: bold;
+    /* Negrito para destacar o título */
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    /* Limite de largura para melhor leitura */
+    margin: 0 auto;
+    /* Centraliza o parágrafo */
+}
+
+/* Estilos específicos para dispositivos móveis */
+@media (max-width: 768px) {
+    section {
+        padding: 2.5rem 1rem;
+        /* Reduz ainda mais o padding em telas menores */
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+        /* Ajuste de tamanho da fonte para títulos em telas pequenas */
+    }
+
+    section p {
+        font-size: 1rem;
+        /* Ajuste de tamanho da fonte para parágrafos */
+    }
+}
+
+/* Estilos gerais */
+#about {
+    padding: 4rem 2rem;
+    background-color: #038C4C;
+    /* Fundo verde */
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 2rem auto;
+    max-width: 900px;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+#about:hover {
+    transform: scale(1.02);
+}
+
+/* Conteúdo de texto */
+.content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 1rem auto;
+}
+
+/* Container de imagem com efeitos dinâmicos */
+.image-container {
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+    /* Leve ampliação ao passar o mouse */
+}
+
+.dynamic-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.image-container:hover .dynamic-image {
+    transform: scale(1.1);
+    opacity: 0.9;
+    /* Leve efeito de desfoque */
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    #about {
+        padding: 3rem 1rem;
+    }
+
+    .content h2 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    .image-container {
+        max-width: 100%;
+    }
+}
+
+/* Estilos para a seção de serviços */
+#services {
+    padding: 4rem 2rem;
+    background-color: #73BF86;
+    /* Cor de fundo */
+    color: #FFFFFF;
+    text-align: center;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título da seção */
+#services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+/* Lista de serviços */
+#services ul {
+    list-style: none;
+    padding: 0;
+}
+
+#services li {
+    margin-bottom: 2rem;
+}
+
+/* Estilos para cada serviço */
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+    background-color: #038C4C;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de hover */
+.service-item:hover {
+    transform: scale(1.03);
+}
+
+.service-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Informações do serviço */
+.service-info h3 {
+    font-size: 1.8rem;
+    color: #FFD700;
+    /* Título em destaque */
+    margin-bottom: 0.5rem;
+}
+
+.service-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #F2F2F2;
+    max-width: 600px;
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    #services {
+        padding: 3rem 1rem;
+    }
+
+    #services h2 {
+        font-size: 2rem;
+    }
+
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-image {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+    }
+
+    .service-info h3 {
+        font-size: 1.6rem;
+    }
+
+    .service-info p {
+        font-size: 1rem;
+    }
+}
+
+#contact {
+    padding: 4rem 2rem;
+    background-color: #038C4C;
+    /* Cor de fundo */
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título da seção */
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Detalhes de contato */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Espaçamento entre os itens */
+    align-items: center;
+    /* Centraliza os itens */
+}
+
+/* Item de contato */
+.contact-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Fundo semi-transparente */
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    /* Largura completa */
+    max-width: 400px;
+    /* Limita a largura */
+    transition: background-color 0.3s;
+}
+
+/* Efeito de hover */
+.contact-item:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Ícone de contato */
+.contact-icon {
+    width: 30px;
+    /* Tamanho do ícone */
+    height: auto;
+    /* Mantém proporção */
+    margin-right: 1rem;
+    /* Espaçamento à direita do ícone */
+}
+
+/* Estilos para links */
+.contact-item a {
+    color: #FFD700;
+    /* Cor do link */
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+    /* Sublinha ao passar o mouse */
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    #contact {
+        padding: 3rem 1rem;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        /* Coloca ícone acima do texto em telas menores */
+        align-items: center;
+        /* Centraliza itens em telas pequenas */
+    }
+
+    .contact-icon {
+        margin-bottom: 0.5rem;
+        /* Espaçamento abaixo do ícone */
+    }
+}
+
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: #364559;
+    /* Cor de fundo do rodapé */
+    color: #F2F2F2;
+    /* Cor do texto */
+    border-top: 2px solid #1D8FF2;
+    /* Borda superior para destaque */
+}
+
+/* Estilos para links no rodapé */
+.footer-link {
+    color: #0ba19f;
+    /* Cor do link */
+    text-decoration: none;
+    /* Remove sublinhado */
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    /* Sublinha ao passar o mouse */
+}
+
+/* Estilos responsivos para o rodapé */
+@media (max-width: 768px) {
+    footer {
+        padding: 1.5rem 1rem;
+        /* Aumenta o padding em telas menores */
+    }
+
+    footer p {
+        font-size: 1rem;
+        /* Tamanho da fonte ajustado */
+    }
+}
